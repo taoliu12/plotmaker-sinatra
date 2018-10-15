@@ -1,10 +1,13 @@
-# StoryHelper Sinatra
+# Plot Maker Sinatra
 
-This is a sinatra application that 
+This is a sinatra application that helps authors create story plot outlines using preset forms. The forms follow the guideline of a basic plot blueprint, including character, setting, conflict, and resolution. Users create accounts and can save their plots.
 
 ## Installation
 
-Simply clone the repo or download and unzip the files to any folder on your computer. 
+Simply clone the repo or download and unzip the files to any folder on your computer. Run:
+
+    $ bundle 
+
 
 ## Usage
 
@@ -12,11 +15,11 @@ To start the program, navigate to the program folder and run
 
     $ shotgun
 
-The website will 
+or install your preferred production server.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/kev112/StoryHelper. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kev112/PlotMaker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -24,5 +27,5 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the StoryHelper project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/StoryHelper/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Plot Maker project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/PlotMaker/blob/master/CODE_OF_CONDUCT.md).
 
