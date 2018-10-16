@@ -1,4 +1,4 @@
-# Plot Maker Sinatra
+# Plot Maker
 
 This is a sinatra application that helps authors create story plot outlines using preset forms. The forms follow the guideline of a basic plot blueprint, including character, setting, conflict, and resolution. Users create accounts and can save their plots.
 
