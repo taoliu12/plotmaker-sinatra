@@ -1,18 +1,13 @@
-# Plot Maker Sinatra
+# Plot Maker
 
 This is a sinatra application that helps authors create story plot outlines using preset forms. The forms follow the guideline of a basic plot blueprint, including character, setting, conflict, and resolution. Users create accounts and can save their plots.
 
 ## Installation
 
-Simply clone the repo or download and unzip the files to any folder on your computer. Run:
+Simply clone the repo or download and unzip the files to any folder on your computer. To start the program, navigate to the program folder and run
 
     $ bundle 
-
-
-## Usage
-
-To start the program, navigate to the program folder and run
-
+    $ rake db:migrate
     $ shotgun
 
 or install your preferred production server.
