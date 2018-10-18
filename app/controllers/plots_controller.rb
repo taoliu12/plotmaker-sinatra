@@ -32,7 +32,8 @@ class PlotsController < ApplicationController
     end
 
     get '/plots/:id' do
-
+        @plot = Plot.find_by_id(params[:id])
+        erb :'plots/show'
     end
 
 
