@@ -18,7 +18,7 @@ class PlotsController < ApplicationController
     end
 
     post '/plots' do
-        plot = current_user.plots.build(params).save #use AR association method to build collection
+        plot = current_user.plots.build(params).save #use AR association method to build plot
         if plot 
             redirect "/plots/#{plot.id}"
         else
@@ -26,7 +26,7 @@ class PlotsController < ApplicationController
         end
     end
 
-    get '/plots/show' do
+    get '/plots/:id' do
 
     end
 
