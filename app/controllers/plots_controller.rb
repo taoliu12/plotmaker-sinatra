@@ -8,4 +8,18 @@ class PlotsController < ApplicationController
             redirect '/'
         end
     end
+
+    get '/plots/new' do
+        if logged_in?
+            erb :'plots/new'
+        else
+            redirect '/'
+        end
+    end
+
+    get '/plots/show' do
+
+    end
+
+    
 end
