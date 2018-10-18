@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181014193125) do
+ActiveRecord::Schema.define(version: 20181018051522) do
+
+  create_table "plots", force: :cascade do |t|
+    t.string "title"
+    t.string "setting"
+    t.string "hero"
+    t.string "enemy"
+    t.string "conflict"
+    t.string "climax"
+    t.string "resolution"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
