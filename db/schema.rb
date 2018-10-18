@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20181018051522) do
     t.string "conflict"
     t.string "climax"
     t.string "resolution"
+    t.string "user_id"
   end
 
   create_table "users", force: :cascade do |t|

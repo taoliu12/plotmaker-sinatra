@@ -8,6 +8,7 @@ class CreatePlots < ActiveRecord::Migration
       t.string :conflict
       t.string :climax
       t.string :resolution
+      t.string :user_id
     end
   end
 end
