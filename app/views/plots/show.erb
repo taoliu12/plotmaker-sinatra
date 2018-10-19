@@ -16,9 +16,12 @@
 <p><%= @plot.resolution %></p>
 
 <br><br>
-<a href='/'>Home</a>
+<a href="/plots/<%= @plot.id %>/edit">Edit this plot</a>
 <br>
-<a href="/plots/#{plot.id}/edit">Edit this plot</a>
+<form method='post' action='/plots/<%= @plot.id %>'>
+    <input name='_method' value='delete' type='hidden' >
+    <input type='submit' value='Delete this plot'>
+</form>
 <br>
 <a href='/plots'>See all your plots</a>
 <br>

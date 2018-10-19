@@ -31,10 +31,29 @@ class PlotsController < ApplicationController
 
     end
 
+    get  '/plots/:id/edit' do
+
+    end
+
+    patch '/plots/:id' do
+
+    end
+
+    delete '/plots/:id' do
+        if logged_in?
+            @plot = Plot.find_by_id(params[:id])
+            if @plot && @plot.user == current_user #must be able to find plot AND it belongs to current user
+                @plot.delete
+            end
+            redirect to '/plots'
+        else
+            redirect to '/' 
+        end
+    end
+
+        #show
     get '/plots/:id' do
         @plot = Plot.find_by_id(params[:id])
         erb :'plots/show'
     end
-
-
 end
