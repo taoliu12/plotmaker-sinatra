@@ -19,7 +19,12 @@ class UsersController < ApplicationController
     end
 
     get '/login' do 
-        erb :'users/login'
+        if logged_in?
+            redirect '/plots'
+        else
+            erb :'users/login'
+        end
+        
     end
 
     post '/login' do 
@@ -37,3 +42,9 @@ class UsersController < ApplicationController
         redirect '/'
     end
 end
+
+# if logged_in?
+#     
+# else
+#     
+# end

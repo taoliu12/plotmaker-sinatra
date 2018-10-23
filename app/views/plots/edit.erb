@@ -1,1 +1,22 @@
-<h1>Edit</h1>
+<h1>Edit plot: <%=@plot.title %></h1>
+<h3>Fill out all text fields</h3>
+<form method='post' action='/plots/<%= @plot.id %>'>
+    <input type='hidden' name='_method' value='patch' >
+    <p>Title:</p>
+    <textarea rows="1" cols="60" name="title"></textarea> 
+    <p>Setting:</p>
+    <textarea rows="3" cols="60" name="setting"></textarea> 
+    <p>Hero:</p>
+    <textarea rows="3" cols="60" name="hero"></textarea> 
+    <p>Enemy:</p>
+    <textarea rows="3" cols="60" name="enemy"></textarea> 
+    <p>Conflict:</p>
+    <textarea rows="3" cols="60" name="conflict"></textarea> 
+    <p>Climax:</p>
+    <textarea rows="3" cols="60" name="climax"></textarea><br>
+    <p>Resolution:</p>
+    <textarea rows="3" cols="60" name="resolution"></textarea><br>
+    <input type='submit' value='Submit'>
+</form>
+
+<a href="/plots/<%= @plot.id %>">Cancel Edit</a>

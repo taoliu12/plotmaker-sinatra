@@ -32,7 +32,20 @@ class PlotsController < ApplicationController
     end
 
     get  '/plots/:id/edit' do
-
+        if logged_in?   
+            @plot = Plot.find_by_id(params[:id])
+            if @plot    #make sure plot exists in case someone types in wrong :id/edit
+                if @plot.user == current_user
+                    erb :'/plots/edit'
+                else
+                    redirect "/plots/#{@plot.id}" #go to show page
+                end 
+            else
+                redirect "/plots"
+            end
+        else
+            redirect '/'
+        end
     end
 
     patch '/plots/:id' do
