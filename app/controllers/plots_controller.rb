@@ -60,15 +60,6 @@ class PlotsController < ApplicationController
         end
     end
 
-    # t.string "title"
-    # t.string "setting"
-    # t.string "hero"
-    # t.string "enemy"
-    # t.string "conflict"
-    # t.string "climax"
-    # t.string "resolution"
-    # t.string "user_id"
-
     delete '/plots/:id' do
         if logged_in?
             @plot = Plot.find_by_id(params[:id])
@@ -83,6 +74,7 @@ class PlotsController < ApplicationController
 
         #show
     get '/plots/:id' do
+
         @plot = Plot.find_by_id(params[:id])
         erb :'plots/show'
     end

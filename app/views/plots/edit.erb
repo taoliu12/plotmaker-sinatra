@@ -3,20 +3,21 @@
 <form method='post' action='/plots/<%= @plot.id %>'>
     <input type='hidden' name='_method' value='patch' >
     <p>Title:</p>
-    <textarea rows="1" cols="60" name="title"></textarea> 
+    <textarea rows="1" cols="60" name="title"><%= @plot.title %></textarea> 
     <p>Setting:</p>
-    <textarea rows="3" cols="60" name="setting"></textarea> 
+    <textarea rows="3" cols="60" name="setting"><%= @plot.setting %></textarea> 
     <p>Hero:</p>
-    <textarea rows="3" cols="60" name="hero"></textarea> 
+    <textarea rows="3" cols="60" name="hero"><%= @plot.hero %></textarea> 
     <p>Enemy:</p>
-    <textarea rows="3" cols="60" name="enemy"></textarea> 
+    <textarea rows="3" cols="60" name="enemy"><%= @plot.enemy %></textarea> 
     <p>Conflict:</p>
-    <textarea rows="3" cols="60" name="conflict"></textarea> 
+    <textarea rows="3" cols="60" name="conflict"><%= @plot.conflict %></textarea> 
     <p>Climax:</p>
-    <textarea rows="3" cols="60" name="climax"></textarea><br>
+    <textarea rows="3" cols="60" name="climax"><%= @plot.climax %></textarea><br>
     <p>Resolution:</p>
-    <textarea rows="3" cols="60" name="resolution"></textarea><br>
+    <textarea rows="3" cols="60" name="resolution"><%= @plot.resolution %></textarea><br>
     <input type='submit' value='Submit'>
 </form>
 
 <a href="/plots/<%= @plot.id %>">Cancel Edit</a>
+
