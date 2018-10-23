@@ -49,8 +49,25 @@ class PlotsController < ApplicationController
     end
 
     patch '/plots/:id' do
-
+        if logged_in?
+            @plot = Plot.find_by_id(params[:id])
+            if @plot && @plot.user == current_user #must be able to find plot AND it belongs to current user
+                @plot.update(params.except(:_method)) 
+            end
+            redirect to "/plots/#{@plot.id}"
+        else
+            redirect to '/' 
+        end
     end
+
+    # t.string "title"
+    # t.string "setting"
+    # t.string "hero"
+    # t.string "enemy"
+    # t.string "conflict"
+    # t.string "climax"
+    # t.string "resolution"
+    # t.string "user_id"
 
     delete '/plots/:id' do
         if logged_in?
