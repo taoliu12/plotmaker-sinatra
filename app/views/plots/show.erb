@@ -16,7 +16,7 @@
 <p><%= @plot.resolution %></p>
 
 <br><br>
-<% if @plot.user == current_user %>
+<% if @plot.user == current_user %> 
     <a href="/plots/<%= @plot.id %>/edit">Edit this plot</a>
     <br>
     <form method='post' action='/plots/<%= @plot.id %>'>
@@ -30,6 +30,6 @@
 <br>
 <a href='/plots'>See all your plots</a>
 <br>
-<a href='/plots/all'>See plots by other users</a>
+<a href='/plots/all'>Read plots by other users</a>
 <br>
 <a href='/logout'>Logout</a>

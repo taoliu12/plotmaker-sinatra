@@ -9,6 +9,16 @@ class PlotsController < ApplicationController
         end
     end
 
+    get '/plots/all' do 
+        if logged_in?
+            @user = current_user
+            @plots = Plot.all
+            erb :'plots/all'
+        else
+            redirect '/'
+        end
+    end
+
     get '/plots/new' do
         if logged_in?
             erb :'plots/new'
