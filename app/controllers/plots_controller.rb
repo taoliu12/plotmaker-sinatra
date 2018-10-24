@@ -31,6 +31,7 @@ class PlotsController < ApplicationController
         if logged_in?
             plot = current_user.plots.build(params) #use AR association method to build plot
             if plot.save
+                flash[:message] = 'Successfully created plot.'
                 redirect "/plots/#{plot.id}"
             else
                 redirect '/plots/new'
@@ -48,6 +49,7 @@ class PlotsController < ApplicationController
                 if @plot.user == current_user
                     erb :'/plots/edit'
                 else
+                    
                     redirect "/plots/#{@plot.id}" #go to show page
                 end 
             else
@@ -63,6 +65,7 @@ class PlotsController < ApplicationController
             @plot = Plot.find_by_id(params[:id])
             if @plot && @plot.user == current_user #must be able to find plot AND it belongs to current user
                 @plot.update(params.except(:_method)) 
+                flash[:message] = 'Successfully edited plot.'
             end
             redirect to "/plots/#{@plot.id}"
         else
