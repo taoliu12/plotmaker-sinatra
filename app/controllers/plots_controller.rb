@@ -76,6 +76,7 @@ class PlotsController < ApplicationController
             if @plot && @plot.user == current_user #must be able to find plot AND it belongs to current user
                 @plot.delete
             end
+            flash[:message] = "Plot was successfully deleted."
             redirect to '/plots'
         else
             redirect to '/' 
