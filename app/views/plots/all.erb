@@ -1,0 +1,14 @@
+<h1>All Plots</h1>
+<h3>Read what others have written!</h3>
+<br>
+
+<%  @plots.each do |plot| %>
+    <p> <a href="/plots/<%= plot.id %>"><%= plot.title %></a>, by <%= plot.user.username %> </p>
+<% end %>
+
+<br>
+<a href='/plots/new'>Create new plot</a>
+<br>
+<a href='/plots'>See all your plots</a>
+<br>
+<a href='/logout'>Logout</a>
