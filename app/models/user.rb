@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
     has_many :plots
-    has_secure_password #password_digest 
-    validates :username, presence: :true
+    has_secure_password
+    validates :username, presence: :true, uniqueness: true
     validates :email, presence: :true
 end

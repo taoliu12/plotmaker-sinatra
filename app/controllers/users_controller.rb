@@ -8,12 +8,14 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do 
-        user = User.new(params)
+        @user = User.new(params)
 
-        if user.save
-            session[:user_id] = user.id
+        if @user.save
+            session[:user_id] = @user.id
+            flash[:message] = "Signup successful."
             redirect "/plots"
         else
+            flash[:message] = "Please try again."
             redirect "/signup"
         end
     end
