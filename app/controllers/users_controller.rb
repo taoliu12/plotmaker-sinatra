@@ -30,13 +30,13 @@ class UsersController < ApplicationController
     end
 
     post '/login' do 
-        user = User.find_by(username: params[:username])
-        if user && user.authenticate(params[:password])
-            session[:user_id] = user.id
+        @user = User.find_by(username: params[:username])
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
             redirect '/plots'
         else
-            flash[:message] = "Please try logging in again, or sign up a new account. #{@user.errors.full_messages.to_sentence}"
-            redirect '/'
+            flash[:message] = "Error. Please try logging in again, or sign up for a new account."
+            redirect '/login'
         end
     end
 
@@ -46,8 +46,3 @@ class UsersController < ApplicationController
     end
 end
 
-# if logged_in?
-#     
-# else
-#     
-# end
