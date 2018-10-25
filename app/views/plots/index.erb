@@ -1,8 +1,9 @@
 <h1>All your plots, <%= current_user.username %> </h1>
-<br>
+<ul>
 <% @plots.each do |plot| %>
-    <p><a href='/plots/<%=plot.id%>'><%= plot.title %></a></p>
+    <li><p><a href='/plots/<%=plot.id%>'><%= plot.title %></a></p></li>
 <%end%>
+</ul>
 <br>
 <a href='/plots/new'>Create a new plot</a>
 <br>
