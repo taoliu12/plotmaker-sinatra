@@ -15,7 +15,7 @@ class UsersController < ApplicationController
             flash[:message] = "Signup successful."
             redirect "/plots"
         else
-            flash[:message] = "Please try again."
+            flash[:message] = "Please try again. #{@user.errors.full_messages.to_sentence}"
             redirect "/signup"
         end
     end
@@ -35,6 +35,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect '/plots'
         else
+            flash[:message] = "Please try logging in again, or sign up a new account. #{@user.errors.full_messages.to_sentence}"
             redirect '/'
         end
     end

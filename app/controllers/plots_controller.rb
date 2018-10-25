@@ -34,6 +34,7 @@ class PlotsController < ApplicationController
                 flash[:message] = 'Successfully created plot.'
                 redirect "/plots/#{plot.id}"
             else
+                flash[:message] = 'Please try again. Did you fill out all text fields?'
                 redirect '/plots/new'
             end
         else
