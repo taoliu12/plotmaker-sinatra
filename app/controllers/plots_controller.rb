@@ -10,13 +10,18 @@ class PlotsController < ApplicationController
     end
 
     get '/plots/all' do 
-        if logged_in?
-            @user = current_user
-            @plots = Plot.all
-            erb :'plots/all'
-        else
-            redirect '/'
-        end
+        # if logged_in?
+        #     @user = current_user
+        #     @plots = Plot.all
+        #     erb :'plots/all'
+        # else
+        #     redirect '/'
+        # end
+
+        redirect_if_not_logged_in
+        @user = current_user
+        @plots = Plot.all
+        erb :'plots/all'
     end
 
     get '/plots/new' do
@@ -50,7 +55,6 @@ class PlotsController < ApplicationController
                 if @plot.user == current_user
                     erb :'/plots/edit'
                 else
-                    
                     redirect "/plots/#{@plot.id}" #go to show page
                 end 
             else
@@ -87,7 +91,6 @@ class PlotsController < ApplicationController
         end
     end
 
-    #show
     get '/plots/:id' do
         @plot = Plot.find_by_id(params[:id])
         erb :'plots/show'
